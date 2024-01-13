@@ -13,15 +13,15 @@ const WelcomePage = () => {
   };
 
   return (
-    <div style={backgroundStyle}>
-      <div className="container mx-auto">
+    <div style={backgroundStyle} className="flex flex-col vmd:gap-[6.3rem] sm:gap-[4.3rem] vsm:gap-[3.7rem] overflow-hidden h-screen">
+      <div className="container mx-auto pt-6w-[100%] lg:ml-[9rem] md:ml-[3rem] vmd:ml-[0.1rem] sm:px-[1.7rem] mt-[2.5rem]">
        <Navbar/>
       </div>
 
-      <h1 className="text font-bold">A new approach to chatting</h1>
-      <p className="p-7">Odin Chat brings your social interactions to the next level and blah blah blah</p>
-      <button className="bg-indigo-500 p-3 rounded" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>
-        <Link to="/chatrooms" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>Start Chatting</Link>
+      <h1 className="text font-bold">A new approach to chatting🌌</h1>
+      <p className="p-7">Take chatting to the next level with Odin chat app🚀 (Spread your wings🕊). Don't you feel like you can say anything with Odin😉, well not "anything"😅.</p>
+      <button className="bg-indigo-500 p-3 rounded-lg w-[95%] self-center shadow-md shadow-slate-400" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>
+        <Link to="/chatrooms" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>Start your engine👩‍🚀</Link>
         </button>
     </div>
   );

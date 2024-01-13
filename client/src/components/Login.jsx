@@ -72,34 +72,34 @@ const Login = () => {
                 </h2>
             </div>
             <h1 className="text font-bold text-2xl m-4" style={{ fontSize: '30px', fontFamily: 'Poppins' }}>
-                Login
+                Login🚀
             </h1>
-            <form className="flex flex-col items-center" action="" method="">
+            <form className="flex flex-col items-center gap-[0.47rem]" action="" method="">
                 <label htmlFor="email" className="text-left">
-                    Email
+                    Email:
                 </label>
                 <input type="email"
                     name="email"
                     id="email"
-                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-500"
+                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, [e.target.name]: e.target.value })} />
                 <label htmlFor="password" className="text-left">
-                    Password
+                    Password:
                 </label>
                 <input type="password"
                     name="password"
                     id="password"
-                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-600"
+                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
                     value={formState.password}
                     onChange={(e) => setFormState({ ...formState, [e.target.name]: e.target.value })} />
                 <input type="submit"
-                    className="bg-blue-500 text-white rounded h-10 w-2/4 m-3"
+                    className="bg-blue-500 text-white rounded h-10 w-2/4 m-3 shadow-md shadow-slate-400"
                     value="Log In"
                     onClick={(e) => handleSubmit(e)} />
-                <p className="m-2">Are you new? <Link to="/signup">Sign Up</Link></p>
-               <Link to="#">Forgotten Password?</Link>
-                <button className="flex flex-row items-center justify-center w-2/4 h-10 bg-gray-500 text-white p-3 focus:outline-none  gap-3 border-lg rounded">
+                <p className="m-2">Are you new? <Link to="/signup" className="hover:text-blue-400">Sign Up</Link></p>
+               <Link className="hover:text-blue-400" to="#">Forgotten Password?</Link>
+                <button className="flex flex-row items-center justify-center w-2/4 h-10 bg-gray-500 text-white p-3 focus:outline-none  gap-3 border-lg rounded shadow shadow-blue-500">
                     <FaGithub style={{ fontSize: '20px' }} />
                     Sign In With GitHub
                 </button>
