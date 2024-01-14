@@ -81,7 +81,7 @@ const Login = () => {
                 <input type="email"
                     name="email"
                     id="email"
-                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
+                    className="h-9 rounded outline-none px-3 md:w-2/4 vmd:w-[65%] vsm:w-[70vw] text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, [e.target.name]: e.target.value })} />
                 <label htmlFor="password" className="text-left">
@@ -90,16 +90,16 @@ const Login = () => {
                 <input type="password"
                     name="password"
                     id="password"
-                    className="h-9 rounded outline-none px-3 w-2/4 text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
+                    className="h-9 rounded outline-none px-3 md:w-2/4 vmd:w-[65%] vsm:w-[70vw] text-slate-600 shadow-sm shadow-blue-400 mb-[2rem]"
                     value={formState.password}
                     onChange={(e) => setFormState({ ...formState, [e.target.name]: e.target.value })} />
                 <input type="submit"
-                    className="bg-blue-500 text-white rounded h-10 w-2/4 m-3 shadow-md shadow-slate-400"
+                    className="bg-blue-500 text-white rounded h-10 md:w-2/4 vmd:w-[65%] vsm:w-[70vw] m-3 shadow-md shadow-slate-400 cursor-pointer"
                     value="Log In"
                     onClick={(e) => handleSubmit(e)} />
-                <p className="m-2">Are you new? <Link to="/signup" className="hover:text-blue-400">Sign Up</Link></p>
-               <Link className="hover:text-blue-400" to="#">Forgotten Password?</Link>
-                <button className="flex flex-row items-center justify-center w-2/4 h-10 bg-gray-500 text-white p-3 focus:outline-none  gap-3 border-lg rounded shadow shadow-blue-500">
+                <p className="m-2">Are you new? <Link to="/signup" className="hover:text-blue-400 underline">Sign Up</Link></p>
+               <Link className="hover:text-blue-400 underline" to="#">Forgotten Password?</Link>
+                <button className="flex flex-row items-center justify-center md:w-2/4 vmd:w-[65%] vsm:w-[70vw] h-10 bg-gray-500 text-white p-3 focus:outline-none  gap-3 border-lg rounded shadow shadow-blue-500 cursor-pointer">
                     <FaGithub style={{ fontSize: '20px' }} />
                     Sign In With GitHub
                 </button>

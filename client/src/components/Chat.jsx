@@ -104,11 +104,11 @@ const Chat = () => {
      
       <div className="chat-container p-4 overflow-y-auto">
         {previousChats.map((message, index) => (
-          <div className="bg-red-500 text-white p-3 mb-5 rounded-lg w-3/5 break-words shadow-md" key={index}>
+          <div className="bg-red-500 text-white p-3 mb-5 rounded-lg w-2/5 break-words shadow shadow-black text-left" key={index}>
             <h2 className="text-md font-bold text-left">{message.sender}</h2>
            
             <p>{message.content}</p>
-            <span className="text text-right">{formatTime(message.timestamp)}</span>
+            <span className="text">{formatTime(message.timestamp)}</span>
           </div>
         ))}
       </div>
@@ -124,7 +124,7 @@ const Chat = () => {
             type="text"
             name="message"
             placeholder="Say something nice"
-            className="h-10 rounded outline-none px-3 w-full"
+            className="h-10 rounded-md outline-none px-3 w-full"
             autoComplete="off"
             value={currentChat}
             onChange={(e) => setCurrentChat(e.target.value)}
@@ -139,7 +139,7 @@ const Chat = () => {
             ref={fileInputRef}
             className="hidden"
           />
-          <button type="submit" className="btn bg-blue-500 p-2 rounded" >
+          <button type="submit" className="btn bg-blue-500 p-2 rounded-md" >
             <FaPaperPlane style={{ fontSize: "25px" }} />
           </button>
         </form>

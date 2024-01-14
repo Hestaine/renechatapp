@@ -84,22 +84,22 @@ const Chatrooms = () => {
       <ToastContainer />
       <section className="container">
         <h1 className="text text-xxl font-bold text-white p-6" style={{ fontFamily: 'Poppins' }}>
-          Chatrooms
+          Chatrooms🥂
         </h1>
 
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row justify-center">
             <input
-              className="h-9 rounded text-white outline-none px-3 w-2/4"
+              className="h-9 rounded text-white outline-none px-3 w-2/4 shadow-sm shadow-blue-400"
               type="text"
               name="roomname"
               value={roomName}
               onChange={handleRoomNameChange}
-              placeholder="New Chatroom"
+              placeholder="New Chatroom🎆"
             />
             <input
               type="submit"
-              className="bg-green-500 text-white rounded h-10 mx-2 px-3"
+              className="bg-green-500 text-white rounded h-10 mx-2 px-3 cursor-pointer shadow shadow-slate-400"
               value="Create"
             />
           </div>
@@ -109,7 +109,7 @@ const Chatrooms = () => {
         <p className="text text-xl m-5">Here are the available chatrooms</p>
         {/* <Loader /> */}
         {roomData.map((room) => (
-          <div key={room._id} className="flex flex-row items-center border border-white border-solid hover:border-4 hover:border-white rounded my-5 w-2/4"
+          <div key={room._id} className="flex flex-row items-center border-white border hover:border-2 hover:border-slate-400 rounded my-5 md:w-2/4 w-3/4 mx-auto cursor-pointer shadow-sm shadow-blue-400"
             onClick={() => {goToRoom(room._id)}}
           >
             <div className="flex flex-col flex-1">
@@ -118,10 +118,10 @@ const Chatrooms = () => {
               <p className="text-sm py-2">{`Member Count: ${room.members.length}`}</p>
             </div>
             <div className="flex items-center">
-            <span className="bg-green-500 rounded-full p-2 w-full h-full">
+            <span className="bg-green-500 rounded-[50%] p-2 w-[2.2rem] h-[2.2rem] z-10">
               <p className="text-sm">{`${room.messages.length}`}</p>
               </span>
-              <button className="bg-red-500 p-2 m-3 rounded"
+              <button className="bg-red-500 p-2 m-3 rounded z-10"
                 onClick={() => { handleDelete(room._id) }}>
                <FaTrash/>
               </button>

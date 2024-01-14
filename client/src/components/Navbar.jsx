@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <>
              <ToastContainer/>
-            <div className="flex flex-row gap-8">
+            <div className="flex flex-row gap-8 vmd:justify-center">
                 <div className="brand flex flex-row gap-3 items-center">
                 <Link to="/"><img src={OdinLogo} alt="Logo" /></Link>
                     <h2 className="text font-bold text-xl" style={{ fontSize: '30px', fontFamily: 'Poppins' }}>
@@ -41,13 +41,13 @@ const Navbar = () => {
                     <div className="flex flex-row items-center gap-4">
                         <div className="userdetails flex flex-row gap-4 justify-center">
                             <CgProfile style={{ fontSize: '40px' }} />
-                            <div className="flex flex-col">
+                            <div className="flex flex-col text-xs">
                             <p>Logged in as, </p>
                             <p className="text text-lg font-bold">{populateUsername()}</p>
                             </div>
                         </div>
                         <button
-                            className="bg-red-400 p-2"
+                            className="bg-red-400 p-2 rounded  shadow shadow-slate-400 cursor-pointer"
                             style={{ fontFamily: 'Poppins', fontSize: '20px', color: 'white', cursor: 'pointer' }}
                             onClick={handleLogout}
                         >
