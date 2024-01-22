@@ -35,7 +35,10 @@ const router = createBrowserRouter([
     element: <NotFound/>
   },
 
-])
+],
+{
+  basename: '/client', // Replace with your actual base URL
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
