@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
 const Chatrooms = () => {
+  const [isLoading, setIsLoading] = useState(true) //To render the loader when i'm ready to implement it
   const [roomName, setRoomName] = useState('');
   const [roomData, setRoomData] = useState([
     {
@@ -27,6 +28,7 @@ const Chatrooms = () => {
         setRoomData(Array.isArray(res.data.data) ? res.data.data : []);
       })
       .catch((err) => console.error('Error fetching data', err))
+      .finally(() => {setIsLoading(false)})
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -44,7 +46,7 @@ const Chatrooms = () => {
         { name: roomName }).then((res) => {
           toast.success('Created chatroom');
           fetchData(); // Refresh room data after creating a chatroom
-        }).catch((err) => toast.error('Some weird error'))
+        }).catch((err) => toast.error('Some weird error,'))
     } catch (error) {
       console.error(error);
     }
@@ -67,9 +69,10 @@ const Chatrooms = () => {
      .then(res => {
         console.log(res.data.existingRoom.messages) //Accesses the messages available
         toast.success(`Redirecting to ${res.data.existingRoom.name}...`);
-        setInterval(() => {
+        setTimeout(() => {
           navigate(res.data.urlLink);
         }, 3000)
+        clearTimeout(3000)
        }).catch((err) => {
          toast.error("Something went wrong")
        })

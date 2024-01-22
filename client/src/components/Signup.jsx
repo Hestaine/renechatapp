@@ -30,14 +30,16 @@ const Signup = () => {
     if (emailRegex.test(email) && passwordRegex.test(password) && username.length > 6 && password == secpassword) {
       axios.post('https://chatapp-backend-htbo.onrender.com/signup',
 
-        {email: email, username: username, password: password}
+        {email: email, 
+          username: username,
+           password: password}
 
       ).then((res) =>  {
         console.log(res.status, typeof(res.status))
         if(res.status == 201) {
            toast.success("Account created")
            toast("Redirecting to login...")
-           setInterval(() => {
+           setTimeout(() => {
             navigate("/login")
             document.title =  "Login"
           }, 10000);

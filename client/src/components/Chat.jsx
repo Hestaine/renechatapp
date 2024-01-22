@@ -107,7 +107,7 @@ const Chat = () => {
             <h2 className="text-md font-bold text-left">{message.sender}</h2>
            
             <p>{message.content}</p>
-            <span className="text text-right">{formatTime(message.timestamp)}</span>
+            <span className="text text-sm text-right">{formatTime(message.timestamp)}</span>
           </div>
         ))}
       </div>
