@@ -9,6 +9,10 @@ import Signup from './components/Signup';
 import Chat from './components/Chat';
 import Chatroom from './components/Chatrooms';
 import NotFound from './components/NotFound';
+/*Tips on fixing client side routing 
+- Avoid using <a> tags use <Link/>
+- Use useNavigate() instead of window.location.href to move from page to page
+*/
 const router = createBrowserRouter([
   {
     path: "/",

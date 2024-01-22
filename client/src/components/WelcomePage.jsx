@@ -21,7 +21,7 @@ const WelcomePage = () => {
       <h1 className="text font-bold">A new approach to chatting🌌</h1>
       <p className="p-7">Take chatting to the next level with Odin chat app🚀 (Spread your wings🕊). Don't you feel like you can say anything with Odin😉, well not "anything"😅.</p>
       <button className="bg-indigo-500 p-3 rounded-lg w-[40%] self-center shadow-md shadow-slate-400" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>
-        <Link to="/chatrooms" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>Start your engine👩‍🚀</Link>
+        <Link to="/chatrooms" style={{fontFamily:"Poppins", fontSize:"20px", color: "white"}}>Start chatting</Link>
         </button>
     </div>
   );
