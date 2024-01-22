@@ -10,4 +10,4 @@ async function dbConn() {
     await mongoose.connect(dbURI)
 }
 
-module.exports = dbConn
+module.exports = dbConn;

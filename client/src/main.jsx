@@ -16,7 +16,8 @@ import NotFound from './components/NotFound';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>
+    element: <App/>,
+    errorElement:<NotFound/>
   },
   {
     path: "login",
