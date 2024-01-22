@@ -2,24 +2,26 @@ import React, { useState } from 'react';
 import OdinLogo from '../assets/logo.svg';
 import { CgProfile } from 'react-icons/cg';
 import { ToastContainer, toast } from "react-toastify"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import "react-toastify/dist/ReactToastify.css"
+
 const Navbar = () => {
     // State to manage user login status
     const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage['token']);
-
+    const navigate = useNavigate()
     const handleLogout = () => {
         // Clear the authentication token from localStorage
         localStorage.removeItem('token');
         // Update the isLoggedIn state to false
         setIsLoggedIn(false);
         toast.info("Logging out...");
-        setTimeout(() => {window.location.href = "/login"}, 3000)
+        setTimeout(() => {navigate("/login")}, 3000)
+        clearTimeout(3000)
     };
 
     const populateUsername = () => {
         const token = localStorage.token;
-        if (token.length > 0) {
+        if (token.length != 0) {
             return JSON.parse(atob(token.split('.')[1])).username;
         } else {
             return 'User';
