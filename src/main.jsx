@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <NotFound/>
   },
 
-],
+]
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
