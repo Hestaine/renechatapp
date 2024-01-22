@@ -4,7 +4,7 @@ import OdinLogo from '../assets/logo.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 const Login = () => {
 
     const [formState, setFormState] = useState({
@@ -12,7 +12,7 @@ const Login = () => {
         password: ''
     })
     const [loggedIn, setLoggedIn] = useState(false);
-
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
         let { email, password } = formState;
@@ -33,7 +33,8 @@ const Login = () => {
                         toast.success("Logging in...")
                         setLoggedIn(true)
                         localStorage.setItem('token', res.data.token)
-                        location.href = "/chatrooms"
+                   
+                        navigate("/chatrooms")
                     }
                     else if (res.status === 401) {
                         toast.error(res.data.message);
@@ -66,7 +67,7 @@ const Login = () => {
         <div className="container mx-auto">
             <ToastContainer />
             <div className="flex flex-row items-center gap-3">
-                <a href="/"><img src={OdinLogo} alt="Logo" /></a>
+                <Link to="/"><img src={OdinLogo} alt="Logo" /></Link>
                 <h2 className="text font-bold text-xl" style={{ fontSize: '30px', fontFamily: 'Poppins' }}>
                     Odin Chat
                 </h2>

@@ -2,10 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { FaArrowLeft, FaPaperPlane } from 'react-icons/fa';
 import { BiImages } from 'react-icons/bi';
 import Navbar from './Navbar';
-import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {Link} from 'react-router-dom'
 const Chat = () => {
   const [previousChats, setPreviousChats] = useState([]);
   const [currentChat, setCurrentChat] = useState("");
@@ -89,11 +88,11 @@ const Chat = () => {
       <ToastContainer />
       <Navbar />
       <div className="mx-auto flex items-center justify-between ">
-        <a href="/chatrooms"
+        <Link to="/chatrooms"
           className="w-1/3"
           style={{ fontSize: "30px", padding: "1.5rem", color: "white" }}>
           <FaArrowLeft />
-        </a>
+        </Link>
         <h1 className="text-white text-3xl font-extrabold w-1/3"
           style={{ fontFamily: "Poppins" }}>
           {chatName}

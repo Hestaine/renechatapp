@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import OdinLogo from '../assets/logo.svg';
 import axios from "axios";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 const Signup = () => {
@@ -13,7 +13,7 @@ const Signup = () => {
   })
 
   const [secpassword, setSecPassword] = useState("")
-
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +37,10 @@ const Signup = () => {
         if(res.status == 201) {
            toast.success("Account created")
            toast("Redirecting to login...")
-           setInterval(() => { location.href = "/login"}, 10000);
+           setInterval(() => {
+            navigate("/login")
+            document.title =  "Login"
+          }, 10000);
           
           }
         else { //With a 409 in mind
