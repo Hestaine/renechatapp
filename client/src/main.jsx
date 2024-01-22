@@ -15,19 +15,19 @@ const router = createBrowserRouter([
     element: <App/>
   },
   {
-    path: "login",
+    path: "/login",
     element: <Login/>
   },
   {
-    path: "signup",
+    path: "/signup",
     element: <Signup/>
   },
   {
-    path: "chatroom/:id",
+    path: "/chatroom/:id",
     element: <Chat/>
   },
   {
-    path: "chatrooms",
+    path: "/chatrooms",
     element: <Chatroom/>
   },
   {
