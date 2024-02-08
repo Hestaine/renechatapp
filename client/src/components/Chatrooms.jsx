@@ -72,7 +72,7 @@ const Chatrooms = () => {
         setTimeout(() => {
           navigate(res.data.urlLink);
         }, 3000)
-        clearTimeout(3000)
+        
        }).catch((err) => {
          toast.error("Something went wrong")
        })
