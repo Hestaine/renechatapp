@@ -2,7 +2,6 @@ const express = require("express")
 const dbConn = require("./utils/dbconnect") //Import the utility for connecting to the database
 const {createServer} = require("http") 
 const app = express()
-const {Server} = require("socket.io") 
 const server = createServer(app)
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
